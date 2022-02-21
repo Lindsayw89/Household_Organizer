@@ -20,7 +20,7 @@ function App() {
 
 
 <Switch>
-<Route exact path='/'><Main/></Route>
+<Route exact path='/Household_Organizer'><Main/></Route>
 <Route path='/choredetails/:id'><ChoreDetails/></Route>
 </Switch>
 
