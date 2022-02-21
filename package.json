@@ -2,7 +2,7 @@
   "name": "my_appf22",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Lindsayw89.github.io/Household_Organizer",
+  "homepage": "https://lindsayw89.github.io/Household_Organizer",
   "dependencies": {
     "@jridgewell/trace-mapping": "^0.2.7",
     "@testing-library/jest-dom": "^5.16.2",
