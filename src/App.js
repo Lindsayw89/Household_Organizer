@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Main from './Components/main';
+import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
+import ChoreDetails from './Components/choreDetails';
 
 function App() {
+
+  // fetch('https://jsonplaceholder.typicode.com/todos/1')
+  // .then((res)=>res.json())
+  // .then((data)=>console.log(data)).then((data)=>console.log("yess"))
+  // .then(()=>console.log('three')).then(()=>console.log('four'))
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+
+
+
+
+<Switch>
+<Route exact path='/'><Main/></Route>
+<Route path='/choredetails/:id'><ChoreDetails/></Route>
+</Switch>
+
+</BrowserRouter>
     </div>
   );
 }

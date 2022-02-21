@@ -1,0 +1,52 @@
+
+.mainChore{
+    border: solid #37023c 1px;
+    border-radius:20px 0px 0px 20px;
+    margin: 25px 50px 25px 50px;
+    color:#f9f0f2;
+    background-color: #9888a5;
+    
+    font-weight: 700;
+    font-size: 20px;
+  
+   font-family: 'Inter', sans-serif;
+    
+}
+.mainTitle{
+color: #37023c;
+font-size: 30px;
+text-shadow: 2px 1px#3c7a89;
+}
+
+.mainBckgrnd{
+    background-color: #f9f0f2;
+    min-height: 900px;
+    display: flex;
+}
+.sideNav{
+    width: 25%;
+    background-color: #37023c;
+    border-radius: 5px;
+    margin: 5px;
+    height: 500px;
+    color: #f9f0f2;
+}
+
+.rightSide{
+    width: 70%;
+   
+
+}
+.menuBtn{
+    width: 2.5rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.menuBtn span{
+    width: 100%;
+    height: 3px;
+    background-color: #37023c;
+    
+}
