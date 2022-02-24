@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Household_Organizer/static/css/main.6d140111.css",
+    "main.js": "/Household_Organizer/static/js/main.d0289d8c.js",
+    "static/media/logo.svg": "/Household_Organizer/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Household_Organizer/index.html",
+    "main.6d140111.css.map": "/Household_Organizer/static/css/main.6d140111.css.map",
+    "main.d0289d8c.js.map": "/Household_Organizer/static/js/main.d0289d8c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d140111.css",
+    "static/js/main.d0289d8c.js"
+  ]
+}
