@@ -3,6 +3,7 @@ import './App.css';
 import Main from './Components/main';
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
 import ChoreDetails from './Components/choreDetails';
+import AllChores from './Pages/allChores';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
 <Switch>
 <Route exact path='/Household_Organizer'><Main/></Route>
 <Route path='/choredetails/:id'><ChoreDetails/></Route>
+<Route path='/all'><AllChores/></Route>
 </Switch>
 
 </BrowserRouter>

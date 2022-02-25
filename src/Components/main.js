@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { projFirestore } from '../firebase/config'
-import {Route, Link} from 'react-router-dom'
+import {Route, Link, useNavigate} from 'react-router-dom'
 import '../cssFolder/main.css'
 import SideDrawer from './side/sideDrawer'
 
 const Main=()=>{
 
     const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-
+    
     const[data, setData]=useState()
     const[isPending, setIsPending]=useState(false)
     const[error, setError]=useState(false)
