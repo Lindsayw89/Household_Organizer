@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Main from './Components/main';
-import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
+import Main from './Pages/main';
+import {BrowserRouter, Route,Routes, Switch, Link, NavLink} from 'react-router-dom'
 import ChoreDetails from './Components/choreDetails';
 import AllChores from './Pages/allChores';
+import Menu from './Components/side/menu'
 
 function App() {
 
@@ -20,11 +21,11 @@ function App() {
 
 
 
-<Switch>
-<Route exact path='/Household_Organizer'><Main/></Route>
-<Route path='/choredetails/:id'><ChoreDetails/></Route>
-<Route path='/all'><AllChores/></Route>
-</Switch>
+<Routes>
+<Route exact path='/Household_Organizer' element={<Main/>}/>
+<Route path='/choredetails/:id'element={<ChoreDetails/>}/>
+<Route path='/all' element={<AllChores/>}/>
+</Routes>
 
 </BrowserRouter>
     </div>

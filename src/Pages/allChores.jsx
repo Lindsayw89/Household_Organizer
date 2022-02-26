@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { projFirestore } from '../firebase/config'
+import Menu from '../Components/side/menu'
+
 
 const AllChores =()=>{
     const[data, setData]=useState()
@@ -31,7 +33,12 @@ const AllChores =()=>{
     },[])
 
     return(
-        <div> All</div>
+        <div> 
+            <Menu/>
+    <h4>All</h4>
+
+    
+    </div>
     )
 }
 export default AllChores

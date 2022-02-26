@@ -2,12 +2,12 @@ import React, {useState, useEffect} from 'react'
 import { projFirestore } from '../firebase/config'
 import {Route, Link, useNavigate} from 'react-router-dom'
 import '../cssFolder/main.css'
-import SideDrawer from './side/sideDrawer'
+import Menu from '../Components/side/menu'
 
 const Main=()=>{
 
     const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-    
+
     const[data, setData]=useState()
     const[isPending, setIsPending]=useState(false)
     const[error, setError]=useState(false)
@@ -45,18 +45,8 @@ setIsPending(false)
 if(data)
     return(
         <div className="mainBckgrnd ">
+<Menu/>
 
-<a href=" " className="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-</a>
-
-          <div  className="sideNav">
-              <p> left side making this wider and also now Im hoping this will
-                   wrap over to the next line</p>
-<SideDrawer/>
-          </div>
           <div className="rightSide">
 
 

@@ -2,7 +2,7 @@ import react, { useEffect, useState } from 'react'
 import {Link, useParams } from 'react-router-dom'
 import { projFirestore } from '../firebase/config'
 import { format } from 'date-fns/fp'
-
+import Menu from './side/menu'
 
 
 const ChoreDetails =()=>{
@@ -30,6 +30,7 @@ console.log(doc.data())
 if(chore)
     return(
         <div>
+            <Menu/>
             <Link to='/'>Back to Home</Link>
 <p> chore details page</p>
 <p>{chore.name}</p>
