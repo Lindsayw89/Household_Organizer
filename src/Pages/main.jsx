@@ -53,9 +53,10 @@ if(data)
 
             <h2 className="mainTitle ">Tasks that are due</h2>
   {/* .filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>m.timePeriod) */}
-  {data.filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>(m.timePeriod/1000)).map(d=>{
+  {data.filter(m=>((timeNowString/1000)-(m.lastCompleted.toMillis()/1000)).toFixed()>(m.timePeriod)).map(d=>{
        return (
            <div className="mainChore" key={d.id}>
+
 
              <Card sx={{ minWidth: 275 }}>
       <CardContent>

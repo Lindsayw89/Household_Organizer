@@ -27,7 +27,7 @@ const ChoreDetails =()=>{
     const[isPending, setIsPending]=useState(false)
     const[error, setError]=useState(false)
     const [number, setNumber]=useState(1)
-    const [length, setLength]=useState(1)
+    const [length, setLength]=useState(604800)
     const {id}=useParams()
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -49,10 +49,11 @@ console.log(doc.data())
         })
     },[id])
 
-    const handleNumberChange = (event) => {
-        const {value}= event.target.value
-      
-      };
+  const handleConsistency =()=>{
+    projFirestore.collection('chores').doc(id).update({
+        timePeriod: (number* length)
+    })
+  }
 
 
 if(chore)
@@ -78,9 +79,9 @@ if(chore)
              <Button onClick={handleOpen}>
              Complete every: 
     { chore.timePeriod<3628800 &&
-     ' ' +moment.duration(chore.timePeriod*3000).asWeeks().toFixed()+ ' weeks' }
+     ' ' +moment.duration(chore.timePeriod*1000).asWeeks().toFixed()+ ' weeks' }
      { chore.timePeriod>=3628800 &&
-     ' ' + moment.duration(chore.timePeriod*3000).asMonths().toFixed()+ ' months' }
+     ' ' + moment.duration(chore.timePeriod*1000).asMonths().toFixed()+ ' months' }
                  </Button>
                  <Modal
         open={open}
@@ -88,35 +89,52 @@ if(chore)
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
-<form>
-{/* <TextField id="outlined-basic"     variant="outlined" /> */}
+
+<form className="noteForm"
+ onSubmit={handleConsistency}> 
+          
+          <div style={{
+    
+    display: 'block',
+    width: 'fit-content'
+  }}> 
+ 
+{/* <TextField className="te"
+      id="date"
+      onChange={(e)=>{setDate(moment(e.target.value).unix())}}
+      type="date"
+      defaultValue=""
+      InputLabelProps={{
+        shrink: true,
+      }}
+    /> */}
+</div>
 <br></br>
 <Typography>
     How often do you want to complete this task?
 </Typography>
-<Select
-    value={number}
-    label={number}
-    onChange={handleNumberChange}
-  >
-    <MenuItem value={1}>1</MenuItem>
-    <MenuItem value={2}>2</MenuItem>
-    <MenuItem value={3}>3</MenuItem>
-    <MenuItem value={4}>4</MenuItem>
-    <MenuItem value={5}>5</MenuItem>
-    <MenuItem value={6}>6</MenuItem>
+  <Select  value={number} onChange={(e)=>{setNumber(e.target.value)}} >
+      <MenuItem  value="1">1 </MenuItem >
+      <MenuItem  value="2">2 </MenuItem >
+      <MenuItem  value="3" >3 </MenuItem >
+      <MenuItem  value="4" >4 </MenuItem >
+      <MenuItem  value="5" >5 </MenuItem >
+      <MenuItem  value="6" >6 </MenuItem >
+  </Select>
+  <Select  value={length} onChange={(e)=>{setLength(e.target.value)}} >
+      <MenuItem  value="604800">Week(s) </MenuItem >
+      <MenuItem  value="2629743 ">Month(s)</MenuItem >
+     
   </Select>
 
-  <Select
-    value='ag'
-    label="Weeks/Months"
-    onChange={handleNumberChange}
-  >
-    <MenuItem value={1}>Weeks</MenuItem>
-    <MenuItem value={2}>Months</MenuItem>
-  </Select>
-<Button type="submit">Submit</Button>
-</form>
+  <Button className="devAddBtn" type="submit">Submit</Button>
+
+          
+          </form>
+
+
+
+{console.log( number +'number' + length+ 'length')}
 
 
          </Box>
