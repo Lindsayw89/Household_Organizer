@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { projFirestore } from '../firebase/config'
-import {Link, } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import '../cssFolder/main.css'
 import Menu from '../Components/side/menu'
+import {Box, Card, CardActions, CardContent, Button, Typography} from '@mui/material';
+
+
+
 
 const Main=()=>{
-
+let nav=useNavigate()
     const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
 
     const[data, setData]=useState()
@@ -40,10 +44,11 @@ setIsPending(false)
 
 if(data)
     return(
-        <div className="mainBckgrnd topView ">
+        <div className="mainBckgrnd ">
+        
 <Menu/>
 
-          <div className="rightSide">
+          <div className="rightSide topView">
 
 
             <h2 className="mainTitle ">Tasks that are due</h2>
@@ -51,15 +56,20 @@ if(data)
   {data.filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>(m.timePeriod/1000)).map(d=>{
        return (
            <div className="mainChore" key={d.id}>
-         
-               <p>{d.name}</p>
-               {/* <li>{d.lastCompleted.toMisllis()}</li> */}
-               {/* <li>{((timeNowString/1000)-(d.lastCompleted.toMillis()/1000)).toFixed(0)} math</li>
 
-               <li>{d.lastCompleted.toMillis()/1000} fb miilli</li>
-               <li>{(timeNowString)} timenow</li> */}
-             <Link to={`/choredetails/${d.id}`}>Details</Link>
-             
+             <Card sx={{ minWidth: 275 }}>
+      <CardContent>
+      <Typography variant="h5" >
+    
+       {d.name}
+        </Typography>
+     
+      </CardContent>
+      <CardActions>
+        <Button size="medium" onClick={()=>{nav(`/choredetails/${d.id}`)}}>View More</Button>
+      </CardActions>
+    </Card>
+
            </div>
 
        )

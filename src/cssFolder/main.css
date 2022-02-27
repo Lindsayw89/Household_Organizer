@@ -3,7 +3,7 @@
     margin-top:11vh;
 }
 .mainChore{
-    border: solid #37023c 1px;
+ 
     border-radius:5px;
     margin: 25px 50px 25px 50px;
     color:#f9f0f2;
@@ -27,19 +27,14 @@ text-shadow: 2px 1px#3c7a89;
     display: flex;
    
 }
-.sideNav{
-    width: 25%;
-    background-color: #37023c;
-    border-radius: 5px;
-    margin: 5px;
-    height: 500px;
-    color: #f9f0f2;
-}
+
 
 .rightSide{
     width: 100%;
    
 }
+
+
     @media screen and (min-width: 600px) {
        .topView{
             margin-top: 14vh;

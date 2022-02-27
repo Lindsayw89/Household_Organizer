@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Main from './Pages/main';
 import {BrowserRouter, Route,Routes, Switch, Link, NavLink} from 'react-router-dom'
-import ChoreDetails from './Components/choreDetails';
+import ChoreDetails from './Pages/choreDetails';
 import AllChores from './Pages/allChores';
 import Menu from './Components/side/menu'
 
