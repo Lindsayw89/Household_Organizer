@@ -2,7 +2,6 @@
   "name": "my_appf22",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lindsayw89.github.io/Household_Organizer",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -26,9 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "master -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

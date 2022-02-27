@@ -22,7 +22,7 @@ function App() {
 
 
 <Routes>
-<Route exact path='/Household_Organizer' element={<Main/>}/>
+<Route exact path='/' element={<Main/>}/>
 <Route path='/choredetails/:id'element={<ChoreDetails/>}/>
 <Route path='/all' element={<AllChores/>}/>
 </Routes>
