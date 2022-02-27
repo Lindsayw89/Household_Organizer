@@ -35,7 +35,7 @@ const AllChores =()=>{
     return(
         <div> 
             <Menu/>
-    <h4>All</h4>
+    <h4 className="topView">All</h4>
 
     
     </div>

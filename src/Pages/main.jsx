@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { projFirestore } from '../firebase/config'
-import {Route, Link, useNavigate} from 'react-router-dom'
+import {Link, } from 'react-router-dom'
 import '../cssFolder/main.css'
 import Menu from '../Components/side/menu'
 
@@ -13,11 +13,7 @@ const Main=()=>{
     const[error, setError]=useState(false)
     const[ct, setCT]=useState(new Intl.DateTimeFormat('en-US').format)
   const[timeNowString, setTimeNowString]=useState(new Date().getTime())
-//new Date().toString() // reutrn date in date format as string
-//     const getPokemon =async ( ) =>{
-// const data= await  fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
-// .then((res)=> res.json()).then((data)=>setPokemon(data.results))
-//     }
+
 useEffect(()=>{
 setIsPending(true)
 projFirestore.collection('chores').get().then((snapshot)=>{
@@ -44,13 +40,13 @@ setIsPending(false)
 
 if(data)
     return(
-        <div className="mainBckgrnd ">
+        <div className="mainBckgrnd topView ">
 <Menu/>
 
           <div className="rightSide">
 
 
-            <h2 className="mainTitle">Tasks that are due</h2>
+            <h2 className="mainTitle ">Tasks that are due</h2>
   {/* .filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>m.timePeriod) */}
   {data.filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>(m.timePeriod/1000)).map(d=>{
        return (
