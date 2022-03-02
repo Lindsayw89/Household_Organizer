@@ -99,15 +99,7 @@ if(chore)
     width: 'fit-content'
   }}> 
  
-{/* <TextField className="te"
-      id="date"
-      onChange={(e)=>{setDate(moment(e.target.value).unix())}}
-      type="date"
-      defaultValue=""
-      InputLabelProps={{
-        shrink: true,
-      }}
-    /> */}
+
 </div>
 <br></br>
 <Typography>

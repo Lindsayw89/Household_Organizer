@@ -2,6 +2,7 @@
 import firebase from '@firebase/app'
 import 'firebase/firestore'
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyDoazw1_Mxy_utAmBU8dQOO0ppwM2-mnSs",
     authDomain: "home-chore-tracker-6e22a.firebaseapp.com",
@@ -16,5 +17,5 @@ const firebaseConfig = {
 
   //init services like firestore
 const projFirestore= firebase.firestore()
-
-export { projFirestore }
+const timestamp=firebase.firestore.Timestamp
+export { projFirestore,timestamp }

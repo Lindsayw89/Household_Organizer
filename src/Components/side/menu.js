@@ -68,6 +68,20 @@ function ResponsiveDrawer(props) {
             <ListItemText onClick={()=>{navigate('/all')}} primary="All Chores"/>
           </ListItem>
 
+          <ListItem button key="New Chore" >
+            <ListItemIcon>
+           
+            </ListItemIcon>
+            <ListItemText onClick={()=>{navigate('/new')}} primary="New Chore"/>
+          </ListItem>
+
+          <ListItem button key="About" >
+            <ListItemIcon>
+           
+            </ListItemIcon>
+            <ListItemText onClick={()=>{navigate('/about')}} primary="About"/>
+          </ListItem>
+          
 
        
       </List>
@@ -85,6 +99,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { md: `calc(100% - ${drawerWidth}px)` },
           ml: { md: `${drawerWidth}px` },
+          backgroundColor: '#99388C'
         }}
       >
         <Toolbar>
@@ -105,11 +120,11 @@ function ResponsiveDrawer(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 },  }}
-        aria-label="mailbox folders"
+        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 }, }}
+        aria-label="chore menu" 
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
+     <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -118,22 +133,24 @@ function ResponsiveDrawer(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'block' },
+            display: { xs: 'block', sm: 'block' }, 
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+           
           }}
         >
           {drawer}
-        </Drawer>
-        <Drawer
+     </Drawer>
+     <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'none', md: 'block'  },
+            display: { xs: 'none', sm: 'none', md: 'block'  }, 
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+     
           }}
           open
         >
           {drawer}
-        </Drawer>
+     </Drawer>
       </Box>
   
     </Box>

@@ -49,7 +49,9 @@ if(data)
 <Menu/>
 
           <div className="rightSide topView">
-
+<p className="intro">Welcome! I created this project as a way to help keep me organized and remind me of tasks or chores 
+    that need to get done. Also as a way to help encourage me to actually complete these tasks. Listed on this home
+    page are the tasks that need to be done and are awaiting to be marked complete.</p>
 
             <h2 className="mainTitle ">Tasks that are due</h2>
   {/* .filter(m=>(timeNowString/1000)-(m.lastCompleted.toMillis()/1000)>m.timePeriod) */}

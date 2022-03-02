@@ -5,6 +5,8 @@ import {BrowserRouter, Route,Routes, Switch, Link, NavLink} from 'react-router-d
 import ChoreDetails from './Pages/choreDetails';
 import AllChores from './Pages/allChores';
 import Menu from './Components/side/menu'
+import NewChore from './Pages/NewChore';
+import About from './Pages/About';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
 <Route exact path='/' element={<Main/>}/>
 <Route path='/choredetails/:id'element={<ChoreDetails/>}/>
 <Route path='/all' element={<AllChores/>}/>
+<Route path='/new' element={<NewChore/>}/>
+<Route path='/about' element={<About/>}/>
 </Routes>
 
 </BrowserRouter>
