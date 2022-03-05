@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { projFirestore } from '../firebase/config'
-import {Link, useNavigate } from 'react-router-dom'
+import { projFirestore , timestamp, arrayUnion} from '../firebase/config'
+import {Link, useNavigate, useParams } from 'react-router-dom'
 import '../cssFolder/main.css'
 import Menu from '../Components/side/menu'
 import {Box, Card, CardActions, CardContent, Button, Typography} from '@mui/material';
@@ -10,8 +10,9 @@ import {Box, Card, CardActions, CardContent, Button, Typography} from '@mui/mate
 
 const Main=()=>{
 let nav=useNavigate()
+const createdAt =timestamp.fromDate(new Date())
     const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-
+    const {id}=useParams
     const[data, setData]=useState()
     const[isPending, setIsPending]=useState(false)
     const[error, setError]=useState(false)
@@ -40,6 +41,14 @@ setIsPending(false)
 
 
 },[])
+const completeTask=(iD)=>{
+    console.log(iD)
+    // projFirestore.collection('chores').doc(iD).update({
+    //     history: arrayUnion(createdAt),
+    //     lastCompleted: createdAt
+    // })
+   // only need to pass in objects that youre updating
+}
 
 
 if(data)
@@ -62,6 +71,7 @@ if(data)
 
              <Card sx={{ minWidth: 275 }}>
       <CardContent>
+          <Button onClick={()=>{completeTask(d.id)}}> Mark complete</Button>
       <Typography variant="h5" >
     
        {d.name}

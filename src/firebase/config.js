@@ -18,4 +18,5 @@ const firebaseConfig = {
   //init services like firestore
 const projFirestore= firebase.firestore()
 const timestamp=firebase.firestore.Timestamp
-export { projFirestore,timestamp }
+const arrayUnion =firebase.firestore.arrayUnion
+export { projFirestore,timestamp, arrayUnion }
