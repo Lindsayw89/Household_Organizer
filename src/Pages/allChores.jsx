@@ -3,6 +3,7 @@ import { projFirestore } from '../firebase/config'
 import Menu from '../Components/side/menu'
 import {useNavigate} from 'react-router-dom'
 import {Box, Card, CardActions, CardContent, Button, Typography} from '@mui/material';
+import moment from 'moment'
 
 const AllChores =()=>{
     const[data, setData]=useState()
@@ -57,7 +58,13 @@ getChores()
     
        {d.name}
         </Typography>
-     
+        <Typography>
+        Complete every: 
+    { d.timePeriod<3628800 &&
+     ' ' +moment.duration(d.timePeriod*1000).asWeeks().toFixed()+ ' weeks' }
+     { d.timePeriod>=3628800 &&
+     ' ' + moment.duration(d.timePeriod*1000).asMonths().toFixed()+ ' months' }
+      </Typography>
       </CardContent>
       <CardActions>
         <Button size="medium" onClick={()=>{nav(`/choredetails/${d.id}`)}}>View More</Button>

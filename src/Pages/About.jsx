@@ -10,7 +10,7 @@ const About=()=>{
         <div className="aboutPage ">
                 <Menu/>
         
-                  <div className="rightSide">
+                  <div className="abtrightSide">
         
 <h4 className="topView">About my Project</h4>
 

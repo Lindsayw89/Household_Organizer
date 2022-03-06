@@ -37,8 +37,9 @@ const addChore=async (e)=>{
             name: name,
             repeat: true,
             timePeriod: number*length,
-            history: createdAt
-        })   
+            history: [createdAt]
+        }) 
+        
     }catch(err){
         console.log(err)
     }

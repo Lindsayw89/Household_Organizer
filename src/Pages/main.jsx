@@ -46,7 +46,7 @@ const completeTask=(iD)=>{
     projFirestore.collection('chores').doc(iD).update({
         history: firebase.firestore.FieldValue.arrayUnion(createdAt),
         lastCompleted: createdAt,
-        
+
     })
    // only need to pass in objects that youre updating
 }

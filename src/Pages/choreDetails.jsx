@@ -58,9 +58,11 @@ console.log(doc.data())
 
 if(chore)
     return(
-        <div>
-            <Menu/>
-          <div className="topView marginChoreDetail">
+        <div className="mainBckgrnd ">
+        
+        <Menu/>
+        
+                  <div className="rightSide topView marginChoreDetail">
 
 
 
@@ -72,6 +74,15 @@ if(chore)
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
         Last Completed:
     {chore.lastCompleted.toDate().toDateString()}
+        </Typography>
+       
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        {console.log(chore.history[0])}
+        {chore.history.map(m=>{
+            return(
+           <p>  {moment(m.seconds*1000).format("LL")}</p>
+        )})
+        }
         </Typography>
      
       
