@@ -7,12 +7,16 @@ const About=()=>{
 
 
     return (
-    <div className="aboutPage">
-        <Menu/>
+        <div className="aboutPage ">
+                <Menu/>
+        
+                  <div className="rightSide">
+        
 <h4 className="topView">About my Project</h4>
 
 <p>I created this project as a way to help organize myself. In this project I am using react and javascript.
      Data is being pulled from google firebase and I am using material ui for styling </p>
+    </div>
     </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { projFirestore , timestamp, arrayUnion} from '../firebase/config'
+import { projFirestore , timestamp, arrayUnion, firebase} from '../firebase/config'
 import {Link, useNavigate, useParams } from 'react-router-dom'
 import '../cssFolder/main.css'
 import Menu from '../Components/side/menu'
@@ -43,10 +43,11 @@ setIsPending(false)
 },[])
 const completeTask=(iD)=>{
     console.log(iD)
-    // projFirestore.collection('chores').doc(iD).update({
-    //     history: arrayUnion(createdAt),
-    //     lastCompleted: createdAt
-    // })
+    projFirestore.collection('chores').doc(iD).update({
+        history: firebase.firestore.FieldValue.arrayUnion(createdAt),
+        lastCompleted: createdAt,
+        
+    })
    // only need to pass in objects that youre updating
 }
 

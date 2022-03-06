@@ -19,4 +19,4 @@ const firebaseConfig = {
 const projFirestore= firebase.firestore()
 const timestamp=firebase.firestore.Timestamp
 const arrayUnion =firebase.firestore.arrayUnion
-export { projFirestore,timestamp, arrayUnion }
+export { projFirestore,timestamp, arrayUnion, firebase }

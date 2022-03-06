@@ -10,7 +10,7 @@ import {timestamp} from '../firebase/config'
     const style = {
         position: 'absolute',
         top: '40%',
-        left: '50%',
+        left: '60%',
         transform: 'translate(-50%, -50%)',
         width: 400,
         bgcolor: 'background.paper',
@@ -48,8 +48,11 @@ const addChore=async (e)=>{
 //console.log(createdAt)
 // console.log(    moment.unix(new Date())._d )
     return(
-<div>
-    <Menu/>
+        <div className="mainBckgrnd ">
+        
+        <Menu/>
+        
+                  <div className="rightSide newBckgrnd  topView">
     <br></br>
     <br></br>
     <Box sx={style}>
@@ -102,6 +105,7 @@ const addChore=async (e)=>{
 
 
          </Box>
+</div>
 </div>
 
     )
