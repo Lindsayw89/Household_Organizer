@@ -16,3 +16,9 @@
          margin-top: 15vh;
     }
  }
+ .calFlex{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    justify-content: center;
+    align-content: center;
+ }

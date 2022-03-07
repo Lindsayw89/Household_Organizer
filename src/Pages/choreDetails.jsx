@@ -7,6 +7,7 @@ import '../cssFolder/choreDetail.css'
 import moment from 'moment'
 import {Box, Card, CardActions, CardContent, Button,
      Typography, Modal, TextField, Select, MenuItem} from '@mui/material';
+     import { BiCalendarStar } from "react-icons/bi";
     
 
      const style = {
@@ -28,6 +29,7 @@ const ChoreDetails =()=>{
     const[error, setError]=useState(false)
     const [number, setNumber]=useState(1)
     const [length, setLength]=useState(604800)
+    const [desc, setDesc]=useState()
     const {id}=useParams()
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -40,6 +42,7 @@ const ChoreDetails =()=>{
            if(doc.exists){
 setIsPending(false)
 setChore(doc.data())
+setDesc(doc.data().history.reverse())
 console.log(doc.data())
            }
            else{
@@ -56,7 +59,7 @@ console.log(doc.data())
   }
 
 
-if(chore)
+if(chore && desc)
     return(
         <div className="mainBckgrnd ">
         
@@ -68,23 +71,13 @@ if(chore)
 
 <Card sx={{ minWidth: 275 }}>
       <CardContent>
-      <Typography variant="h5" >
+     <Typography variant="h5" >
       {chore.name}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+     <Typography sx={{ mb: 1.5 }} color="text.secondary">
         Last Completed:
     {chore.lastCompleted.toDate().toDateString()}
         </Typography>
-       
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        {console.log(chore.history[0])}
-        {chore.history.map(m=>{
-            return(
-           <p>  {moment(m.seconds*1000).format("LL")}</p>
-        )})
-        }
-        </Typography>
-     
       
      
              <Button onClick={handleOpen}>
@@ -132,16 +125,26 @@ if(chore)
 
   <Button className="devAddBtn" type="submit">Submit</Button>
 
-          
           </form>
-
-
-
-{console.log( number +'number' + length+ 'length')}
-
 
          </Box>
                  </Modal>
+                 
+                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        {console.log(chore.history[0])}
+        <Typography variant="h5">
+            History
+        </Typography>
+        <div className="calFlex"> 
+        
+        {desc.map(m=>{
+            return(
+           <p style={{margin: '-1px'}}>  {moment(m.seconds*1000).format("MMM Do YYYY")}  <BiCalendarStar/> </p>
+          )})
+        }
+         </div> 
+        </Typography>
+     
       
       </CardContent>
     </Card>

@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Menu from '../Components/side/menu'
-import {Box, Card, CardActions, CardContent, Button,
-    Typography, Modal, TextField, Select, MenuItem} from '@mui/material';
+import {Box, Button, Stack, Snackbar,
+    Typography, TextField, Select, MenuItem} from '@mui/material';
+    import {MuiAlert} from '@mui/material'
 import { projFirestore } from '../firebase/config';
 import moment from 'moment';
 import {timestamp} from '../firebase/config'
@@ -10,9 +11,9 @@ import {timestamp} from '../firebase/config'
     const style = {
         position: 'absolute',
         top: '40%',
-        left: '60%',
+        left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: '60%',
         bgcolor: 'background.paper',
         border: '1px solid #0300',
         borderRadius: '13px',
@@ -53,7 +54,7 @@ const addChore=async (e)=>{
         
         <Menu/>
         
-                  <div className="rightSide newBckgrnd  topView">
+                  <div className="rightSide  topView">
     <br></br>
     <br></br>
     <Box sx={style}>

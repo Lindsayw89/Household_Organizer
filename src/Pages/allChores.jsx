@@ -46,18 +46,18 @@ getChores()
 
 
             <h2 className="mainTitle ">All Tasks</h2>
-  
+  <div className="allCards">
   {data.map(d=>{
        return (
-           <div className="mainChore" key={d.id}>
-
-
-             <Card sx={{ minWidth: 275 }}>
+          
+<div className="mainChore"  key={d.id}>
+             <Card sx={{ minWidth: 275 }} >
       <CardContent>
       <Typography variant="h5" >
     
        {d.name}
         </Typography>
+
         <Typography>
         Complete every: 
     { d.timePeriod<3628800 &&
@@ -71,10 +71,11 @@ getChores()
       </CardActions>
     </Card>
 
-           </div>
+    </div>     
 
        )
    })} 
+    </div>
 </div>
 
         </div>
