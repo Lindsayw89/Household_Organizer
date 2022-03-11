@@ -6,14 +6,11 @@ import {Box, Button, Stack, Snackbar,
 import { projFirestore } from '../firebase/config';
 import moment from 'moment';
 import {timestamp} from '../firebase/config'
-
+import '../cssFolder/main.css'
 
     const style = {
-        position: 'absolute',
-        top: '40%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '60%',
+       
+   
         bgcolor: 'background.paper',
         border: '1px solid #0300',
         borderRadius: '13px',
@@ -54,22 +51,15 @@ const addChore=async (e)=>{
         
         <Menu/>
         
-                  <div className="rightSide  topView">
+                  <div className="newRightSide  topView">
     <br></br>
     <br></br>
     <Box sx={style}>
 
 <form 
  onSubmit={(e)=>{addChore(e)}}> 
-          
-          <div style={{
-    
-    display: 'block',
-    width: 'fit-content'
-  }}> 
- 
+      
 
-</div>
 
 <Typography variant="h5">
     Add New Chore
