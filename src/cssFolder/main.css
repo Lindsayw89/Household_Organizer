@@ -48,3 +48,9 @@ text-shadow: 2px 1px#3c7a89;
             margin-top: 14vh;
        }
     }
+    @media screen and (min-width: 1080px) {
+        .newRightSide{
+            width: 100%;
+            margin: 3% 15%;
+        }
+     }

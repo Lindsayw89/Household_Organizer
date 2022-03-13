@@ -7,6 +7,8 @@ import AllChores from './Pages/allChores';
 import Menu from './Components/side/menu'
 import NewChore from './Pages/NewChore';
 import About from './Pages/About';
+import SignIn from './Pages/signIn';
+
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
 <Route path='/all' element={<AllChores/>}/>
 <Route path='/new' element={<NewChore/>}/>
 <Route path='/about' element={<About/>}/>
+<Route path='/signin' element={<SignIn/>}/>
 </Routes>
 
 </BrowserRouter>
