@@ -17,32 +17,32 @@ const tstyle={
 }
 
 const SignIn=()=>{
-
-
-
-
-
+    const [email, setEmail]=useState()
+    const [password, setPassword]=useState()
 
     return(
         <div className="mainBckgrnd ">
         
         <Menu/>
         
-                  <div className="rightSide topView">
+             <div className="rightSide topView">
 
                   <Typography>Welcome!</Typography>    
         <Card  sx={style}>
         <form>
             <Typography>Sign In</Typography>
 <label>Email</label>
-<TextField sx={tstyle}>
+<TextField sx={tstyle} onChange={(e)=>{setEmail(e.target.value)}}
+type="email" value={email}>
 
 </TextField>
 <br></br>
 <label>Password</label>
-<TextField sx={tstyle}>
-
+<TextField sx={tstyle} onChange={(e)=>{setPassword(e.target.value)}}
+type="password" value={password}>
+ 
 </TextField>
+<button type ="submit"> Login</button>
 
 
         </form>
