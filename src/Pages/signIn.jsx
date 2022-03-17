@@ -17,8 +17,16 @@ const tstyle={
 }
 
 const SignIn=()=>{
-    const [email, setEmail]=useState()
-    const [password, setPassword]=useState()
+    const [email, setEmail]=useState("")
+    const [password, setPassword]=useState("")
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        console.log(email)
+        console.log(password)
+    }
+
+
 
     return(
         <div className="mainBckgrnd ">
@@ -29,11 +37,11 @@ const SignIn=()=>{
 
                   <Typography>Welcome!</Typography>    
         <Card  sx={style}>
-        <form>
+        <form onSubmit={(e)=>handleSubmit(e)}>
             <Typography>Sign In</Typography>
 <label>Email</label>
 <TextField sx={tstyle} onChange={(e)=>{setEmail(e.target.value)}}
-type="email" value={email}>
+type="text" value={email}>
 
 </TextField>
 <br></br>
@@ -42,7 +50,8 @@ type="email" value={email}>
 type="password" value={password}>
  
 </TextField>
-<button type ="submit"> Login</button>
+<br></br>
+<Button type ="submit" variant="outlined"> Login</Button>
 
 
         </form>
