@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import Menu from '../Components/side/menu'
 import {Box, Button, Stack, Snackbar,
-    Typography, TextField, Select, MenuItem} from '@mui/material';
+    Typography, TextField, Select, MenuItem, Alert } from '@mui/material';
     import {MuiAlert} from '@mui/material'
 import { projFirestore } from '../firebase/config';
 import moment from 'moment';
 import {timestamp} from '../firebase/config'
 import '../cssFolder/main.css'
+
+
 
     const style = {
        
@@ -23,12 +25,13 @@ const NewChore=()=>{
     const [number, setNumber]=useState(1)
     const [length, setLength]=useState(604800)
     const [name,setName]=useState()
+    const [snack, setSnack]=useState(false)
   const createdAt =timestamp.fromDate(new Date())
 
 const addChore=async (e)=>{
     e.preventDefault()
     console.log(e)
-    try{
+    
         projFirestore.collection('chores').add({
             importance: 1,
             lastCompleted: createdAt,
@@ -36,15 +39,19 @@ const addChore=async (e)=>{
             repeat: true,
             timePeriod: number*length,
             history: [createdAt]
-        }) 
-        
-    }catch(err){
-        console.log(err)
-    }
+        })
+        e.target.reset();
+      setSnack(true)  
+
 
 }
+const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return; }
+    setSnack(false);
+  };
 
-//console.log(createdAt)
+
 // console.log(    moment.unix(new Date())._d )
     return(
         <div className="mainBckgrnd ">
@@ -98,6 +105,12 @@ const addChore=async (e)=>{
 
          </Box>
 </div>
+
+<Snackbar open={snack} autoHideDuration={4000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Chore Added
+        </Alert>
+      </Snackbar>
 </div>
 
     )
