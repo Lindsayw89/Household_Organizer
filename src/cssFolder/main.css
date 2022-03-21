@@ -5,13 +5,18 @@
 .intro{
     margin: 0% 12%;
 }
+.allCards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 .mainChore{
  
     border-radius:5px;
-    margin: 25px 50px 25px 50px;
+    margin: 15px 20px 15px 20px;
     color:#f9f0f2;
     background-color: #9888a5;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     font-weight: 700;
     font-size: 20px;
   

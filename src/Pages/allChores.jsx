@@ -51,7 +51,7 @@ getChores()
        return (
           
 <div className="mainChore"  key={d.id}>
-             <Card sx={{ minWidth: 275 }} >
+             <Card  >
       <CardContent>
       <Typography variant="h5" >
     

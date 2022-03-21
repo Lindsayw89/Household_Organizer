@@ -73,12 +73,12 @@ if(data)
 
              <Card sx={{ minWidth: 275 }}>
       <CardContent>
-          <Button onClick={()=>{completeTask(d.id)}}> Mark complete</Button>
+         
       <Typography variant="h5" >
     
        {d.name}
         </Typography>
-     
+        <Button onClick={()=>{completeTask(d.id)}}> Mark complete</Button>
       </CardContent>
       <CardActions>
         <Button size="medium" onClick={()=>{nav(`/choredetails/${d.id}`)}}>View More</Button>
