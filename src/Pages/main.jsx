@@ -40,7 +40,7 @@ setIsPending(false)
     setIsPending(false)
 })
 
-},[])
+},[data])
 const completeTask=(iD)=>{
     console.log(iD)
     projFirestore.collection('chores').doc(iD).update({
