@@ -39,7 +39,7 @@ getChores()
     if(data)
     return(
         <div className="mainBckgrnd ">
-        
+        {console.log(data)}
 <Menu/>
 
           <div className="rightSide topView">

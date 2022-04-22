@@ -139,7 +139,7 @@ if(chore && desc)
         
         {desc.map(m=>{
             return(
-           <p style={{margin: '-1px'}}>  {moment(m.seconds*1000).format("MMM Do YYYY")}  <BiCalendarStar/> </p>
+           <p key={m.id} style={{margin: '-1px'}}>  {moment(m.seconds*1000).format("MMM Do YYYY")}  <BiCalendarStar/> </p>
           )})
         }
          </div> 
