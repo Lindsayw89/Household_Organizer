@@ -32,11 +32,14 @@ const ChoreDetails =()=>{
     const [desc, setDesc]=useState()
     const {id}=useParams()
     const [open, setOpen] = useState(false);
+    const [avg, setAvg]=useState(0)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     useEffect(()=>{
         setIsPending(true)
+  
+
 
         projFirestore.collection('chores').doc(id).get().then((doc)=>{
            if(doc.exists){
@@ -44,6 +47,17 @@ setIsPending(false)
 setChore(doc.data())
 setDesc(doc.data().history.reverse())
 console.log(doc.data())
+let n=0
+doc.data().history.map(t=>
+         
+    n+=t.seconds ) 
+    console.log(n)
+    console.log(doc.data().history.length)
+    setAvg(n/(doc.data().history.length))
+    return avg
+
+
+
            }
            else{
                setIsPending(false)
@@ -51,6 +65,13 @@ console.log(doc.data())
            }
         })
     },[id])
+// const getDateAverage=()=>{
+   
+//     chore.history.map(t=>
+         
+//         avg+=t.seconds ) 
+//         return avg
+//     }
 
   const handleConsistency =()=>{
     projFirestore.collection('chores').doc(id).update({
@@ -144,7 +165,10 @@ if(chore && desc)
         }
          </div> 
         </Typography>
-     
+     <Typography>
+         Average completion time:
+      {avg}
+     </Typography>
       
       </CardContent>
     </Card>
